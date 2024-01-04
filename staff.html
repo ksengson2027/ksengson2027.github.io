@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+
+
+    <!-- Add Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra&family=Cinzel+Decorative:wght@700&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+    <style>
+        body {
+            background-image: url("candles.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Almendra', serif;
+        }
+   
+        /* Navbar transitions */
+        .navbar {
+            background-color: transparent !important;
+            border: none;
+            transition: background-color 0.5s ease-in-out;
+            backdrop-filter: blur(10px);
+        }
+
+
+        .navbar:hover {
+            background-color: transparent;
+        }
+
+
+        .navbar-brand,
+        .nav-link {
+            color: transparent;
+            transition: color 0.5s ease-in-out;
+        }
+
+
+        .navbar:hover .navbar-brand,
+        .navbar:hover .nav-link {
+            color: #ffcc00;
+        }
+
+
+   
+        h1.glowing-text {
+            text-align: center;
+            color: aliceblue;
+            font-size: 30vh;
+            font-family: 'Almendra SC', serif;
+            padding-top: 3vw;
+            padding-bottom: 2vw;
+            text-shadow: 0 0 5vh #ffce48, 0 0 2vh #fc6e1b;
+            animation: glowing 2s infinite;
+        }
+   
+        @keyframes glowing {
+            0% { text-shadow: 0 0 5vh #ffce48, 0 0 2vh #ff7c2f; }
+            50% { text-shadow: 0 0 20vh #ffce48, 0 0 10vh #e65806; }
+            100% { text-shadow: 0 0 5vh #ffce48, 0 0 2vh #772c00; }
+        }
+   
+        h3 {
+            text-align: center;
+            font-size: 8vh;
+            font-weight: bold;
+            color: aliceblue;
+            text-shadow: 0 0 5vh #6f97d0, 0 0 5vh #2f456e;
+        }
+   
+        h4 {
+            text-align: center;
+            font-size: 6vh;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            text-shadow: 0 0 5vh #6f97d0, 0 0 5vh #2f456e;
+        }
+   
+        p {
+            color: aliceblue;
+            font-size: 1.5vw;
+        }
+   
+        /* Button hover effect */
+        .btn:hover {
+            transform: scale(1.1);
+        }
+   
+        /* Adjusted carousel control styles */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 3%;
+        }
+   
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            color: #2f456e;
+        }
+   
+        .carousel-control-prev-icon:hover,
+        .carousel-control-next-icon:hover {
+            color: #ffcc00;
+        }
+   
+        /* Blurred box animation */
+        .blurred-box {
+            backdrop-filter: blur(10px);
+            background-color: rgba(95, 170, 255, 0.236);
+            padding: 50px;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 1200px;
+            animation: fadeIn 1s ease-in-out;
+        }
+   
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+   
+        .staff-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+   
+        .staff-image {
+            width: 300px;
+            height: 450px;
+            border-radius: 8px;
+        }
+   
+        .staff-description {
+            max-width: 60%;
+            padding: 0 20px;
+        }
+   
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 70%;
+            margin: auto;
+        }
+
+
+        /* Adjusted carousel control styles */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 3%;
+        }
+
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            color: #2f456e;
+        }
+
+
+        .carousel-control-prev-icon:hover,
+        .carousel-control-next-icon:hover {
+            color: #ffcc00;
+        }
+        #myCarousel {
+        margin-top: 20px;
+    }
+
+
+    .btn-custom {
+        background-color: #06457c; /* Dark Gray */
+        color: rgb(242, 240, 240); /* White text */
+        border: 2px solid #002b51; /* Dark Gray border */
+        transition: background-color 0.3s, color 0.3s;
+        font-weight: bold;
+        padding: 10px 20px; /* Adjust padding to increase button size */
+        font-size: 24px;
+    }
+
+
+    .btn-custom:hover {
+        background-color: #73b1d0; /* Darker Gray on hover */
+        color: #ffffff;
+    }
+
+
+    @media (max-width: 768px) {
+    h1.glowing-text {
+        font-size: 15vw;
+    }
+
+
+    h3 {
+        font-size: 4vw;
+    }
+
+
+    h4 {
+        font-size: 3vw;
+    }
+
+
+    p {
+        font-size: 2vw;
+    }
+
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        height: 3vw;
+        width: 3vw;
+    }
+
+
+    .btn-custom {
+        padding: 0.8vw 1.6vw;
+        font-size: 3vw;
+    }
+
+
+    /* Responsive STAFF text */
+    .staff-text {
+        font-size: 3vw;
+    }
+
+
+    /* Responsive staff images */
+    .staff-image {
+        width: 20vw;
+        height: 20vh;
+        border-radius: 8px;
+    }
+
+
+    .staff-description {
+        padding: 1vw; /* Add padding to description for better spacing */
+    }
+    .founder-slide .staff-image {
+        width: 20vw;
+        height: 20vh;
+
+
+    }
+   
+}
+
+
+
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container" style="background-color: transparent;">
+            <a class="navbar-brand" href="#">Hogwarts</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active glowing-text"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item glowing-text"><a href="history.html" class="nav-link">Hogwarts: A History</a></li>
+                    <li class="nav-item glowing-text"><a href="syllabus.html" class="nav-link">Syllabus</a></li>
+                    <li class="nav-item glowing-text"><a href="4houses.html" class="nav-link">The Four Houses</a></li>
+                    <li class="nav-item glowing-text"><a href="extracurriculars.html" class="nav-link">Non - Academic Activities</a></li>
+                    <li class="nav-item glowing-text"><a href="contactpage.html" class="nav-link">Contacts</a></li>
+                    <li class="nav-item glowing-text"><a href="staff.html" class="nav-link">Staff</a></li>  
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <h1 class="glowing-text">STAFF</h1>
+
+
+    <div class="container text-center mt-4">
+        <button class="btn btn-custom btn-lg mr-2" onclick="showFounders()">Founders</button>
+        <button class="btn btn-custom btn-lg mr-2" onclick="showAdministrators()">Administrators</button>
+        <button class="btn btn-custom btn-lg" onclick="showTeachers()">Teachers</button>
+    </div>
+<!---------------------------------------------founders-------------------------------------------------- -->
+    <!-- Founders Section -->
+<div class="blurred-box" id="founders-section">
+    <h3>~ founders ~</h3>
+    <p>It is found by the two witches and wizards, for the reason that they wanted to create the world’s best magic
+        school. After they did, each of them created their own unique houses with different personas and expertises
+        to nurture.</p>
+
+
+    <!-- Carousel -->
+    <div id="foundersCarousel" class="carousel slide" data-ride="carousel">
+
+
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+        </ol>
+
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+
+
+            <!-- Display all founders in the first slide -->
+            <div class="carousel-item active">
+                <div class="staff-container">
+                    <!-- Godric Gryffindor -->
+                    <div class="founder-slide">
+                        <img src="godric.png" alt="Godric Gryffindor" class="staff-image">
+                        <h4 style="color: #920202; font-size: 1.5vw;">Godric Gryffindor</h4>
+                    </div>
+           
+                    <!-- Helga Hufflepuff -->
+                    <div class="founder-slide">
+                        <img src="helga.png" alt="Helga Hufflepuff" class="staff-image">
+                        <h4 style="color: rgb(199, 164, 8); font-size: 1.5vw;">Helga Hufflepuff</h4>
+                    </div>
+           
+                    <!-- Rowena Ravenclaw -->
+                    <div class="founder-slide">
+                        <img src="rowena.png" alt="Rowena Ravenclaw" class="staff-image">
+                        <h4 style="color: #25259f; font-size: 1.5vw;">Rowena Ravenclaw</h4>
+                    </div>
+           
+                    <!-- Salazar Slytherin -->
+                    <div class="founder-slide">
+                        <img src="salazar.png" alt="Salazar Slytherin" class="staff-image">
+                        <h4 style="color: #008000; font-size: 1.5vw;">Salazar Slytherin</h4>
+                    </div>
+                </div>
+            </div>
+           
+            <!-- Individual slides for each founder -->
+            <!-- Godric Gryffindor -->
+            <div class="carousel-item">
+                <div class="staff-container">
+                    <img src="godric.png" alt="Godric Gryffindor" class="staff-image" >
+                    <div class="staff-description">
+                        <h4 style="color: #920202;">Godric Gryffindor</h4>
+                        <p>Godric Gryffindor was one of the founders of Hogwarts School of Witchcraft and Wizardry. Known for his
+                            bravery and chivalry, Godric created Gryffindor House, where students are valued for their courage and
+                            determination. Gryffindor's symbol is the lion, and its colors are red and gold.</p>
+                    </div>
+                </div>
+            </div>
+           
+            <!-- Helga Hufflepuff -->
+            <div class="carousel-item">
+                <div class="staff-container">
+                    <img src="helga.png" alt="Helga Hufflepuff" class="staff-image" >
+                    <div class="staff-description">
+                        <h4 style="color: rgb(199, 164, 8);">Helga Hufflepuff</h4>
+                        <p>Helga Hufflepuff was known for her dedication to equality and acceptance of all magical talents. She
+                            founded Hufflepuff House, where students are valued for their hard work, loyalty, and fair play. The
+                            house symbol is the badger, and its colors are yellow and black.</p>
+                    </div>
+                </div>
+            </div>
+           
+            <!-- Rowena Ravenclaw -->
+            <div class="carousel-item">
+                <div class="staff-container">
+                    <img src="rowena.png" alt="Rowena Ravenclaw" class="staff-image" >
+                    <div class="staff-description">
+                        <h4 style="color: #25259f;">Rowena Ravenclaw</h4>
+                        <p>Rowena Ravenclaw valued intelligence and wit, and her house attracted those with a thirst for knowledge.
+                            Ravenclaw House, founded by Rowena, values wisdom and learning. The house symbol is the eagle, and its
+                            colors are blue and silver.</p>
+                    </div>
+                </div>
+            </div>
+           
+            <!-- Salazar Slytherin -->
+            <div class="carousel-item">
+                <div class="staff-container">
+                    <img src="salazar.png" alt="Salazar Slytherin" class="staff-image" >
+                    <div class="staff-description">
+                        <h4 style="color: #008000;">Salazar Slytherin</h4>
+                        <p>Salazar Slytherin prized cunning and ambition, and his house sought out those with pure-blood wizarding
+                            heritage. Slytherin House values resourcefulness and cunning. Its symbol is the serpent, and its colors
+                            are green and silver.</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#foundersCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#foundersCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+
+   
+   
+<!---------------------------------------------------------admin----------------------------------------------- -->
+<div class="blurred-box" id="administrators-section">
+    <h3>~ administrators ~</h3>
+    <p>Meet the dedicated administrators who contribute to the success of Hogwarts School of Witchcraft and Wizardry.</p>
+    <!-- Carousel -->
+    <div id="administratorsCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#administratorsCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#administratorsCarousel" data-slide-to="1"></li>
+            <li data-target="#administratorsCarousel" data-slide-to="2"></li>
+            <li data-target="#administratorsCarousel" data-slide-to="3"></li>
+            <li data-target="#administratorsCarousel" data-slide-to="4"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+           
+           <!-- Albus Dumbledore -->
+<div class="carousel-item active">
+    <div class="staff-container">
+        <img src="dumbledore.jpg" alt="Albus Dumbledore" class="staff-image">
+        <div class="staff-description">
+            <h4>Albus Dumbledore</h4>
+            <p>Albus Dumbledore is the Headmaster of Hogwarts School of Witchcraft and Wizardry. A highly skilled wizard, Dumbledore is known for his wisdom, kindness, and commitment to protecting the magical world from dark forces. As the leader of the school, he plays a vital role in shaping the education and values of young witches and wizards.</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Minerva McGonagall -->
+<div class="carousel-item">
+    <div class="staff-container">
+        <img src="Mcgonagall.webp" alt="Minerva McGonagall" class="staff-image">
+        <div class="staff-description">
+            <h4>Minerva McGonagall</h4>
+            <p>Minerva McGonagall is the Deputy Headmistress of Hogwarts and the Head of Gryffindor House. With her strict exterior and love for her students, she is also the Transfiguration professor. Professor McGonagall is known for her intelligence, discipline, and unwavering dedication to the well-being of the students.</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Severus Snape -->
+<div class="carousel-item">
+    <div class="staff-container">
+        <img src="him.jpg" alt="Severus Snape" class="staff-image">
+        <div class="staff-description">
+            <h4>Severus Snape</h4>
+            <p>Severus Snape is the Potions Master at Hogwarts and the Head of Slytherin House. His expertise in the Dark Arts and his mysterious demeanor make him a complex figure at Hogwarts. Professor Snape, although strict, plays a crucial role in the protection of the school and its students.</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Filius Flitwick -->
+<div class="carousel-item">
+    <div class="staff-container">
+        <img src="flitwich.jpg" alt="Filius Flitwick" class="staff-image">
+        <div class="staff-description">
+            <h4>Filius Flitwick</h4>
+            <p>Filius Flitwick is the Charms professor at Hogwarts and the Head of Ravenclaw House. As a skilled wizard, Professor Flitwick brings charm and humor to his classes. He is passionate about teaching young witches and wizards the art of spellcasting and magical charms.</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Pomona Sprout -->
+<div class="carousel-item">
+    <div class="staff-container">
+        <img src="pomona.webp" alt="Pomona Sprout" class="staff-image">
+        <div class="staff-description">
+            <h4>Pomona Sprout</h4>
+            <p>Pomona Sprout is the Herbology professor at Hogwarts and the Head of Hufflepuff House. Professor Sprout is known for her expertise in magical plants and her nurturing personality. She encourages students to appreciate the magical world of plants and nature.</p>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#administratorsCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#administratorsCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+</div>
+
+
+<!------------------------------------------------------------teachers----------------------------------------------------- -->
+<div class="blurred-box" id="teachers-section">
+    <h3>~ teachers ~</h3>
+
+
+    <p>Meet the dedicated teachers who impart knowledge and wisdom to the students at Hogwarts School of Witchcraft and Wizardry.</p>
+
+
+    <!-- Carousel -->
+    <div id="teachersCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <!-- Add an indicator for each teacher -->
+            <li data-target="#teachersCarousel" data-slide-to="4" class="active"></li>
+            <li data-target="#teachersCarousel" data-slide-to="1"></li>
+            <li data-target="#teachersCarousel" data-slide-to="2"></li>
+            <li data-target="#teachersCarousel" data-slide-to="3"></li>
+            <li data-target="#teachersCarousel" data-slide-to="0"></li>
+            <li data-target="#teachersCarousel" data-slide-to="5"></li>
+            <li data-target="#teachersCarousel" data-slide-to="6"></li>
+            <li data-target="#teachersCarousel" data-slide-to="7"></li>
+            <li data-target="#teachersCarousel" data-slide-to="8"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <!-- Aurora Sinistra -->
+            <div class="carousel-item">
+                <div class="staff-container">
+                    <img src="Sinistra.webp" alt="Aurora Sinistra" class="staff-image">
+                    <div class="staff-description">
+                        <h4>Aurora Sinistra</h4>
+                        <p>Aurora Sinistra is the Astronomy professor at Hogwarts. With her passion for celestial studies, Professor Sinistra introduces students to the wonders of the night sky and the magical properties of celestial bodies.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Minerva McGonagall -->
+            <div class="carousel-item active">
+                <div class="staff-container">
+                    <img src="Mcgonagall.webp" alt="Minerva McGonagall" class="staff-image">
+                    <div class="staff-description">
+                        <h4>Minerva McGonagall</h4>
+                        <p>Minerva McGonagall is the Deputy Headmistress of Hogwarts and the Head of Gryffindor House. With her strict exterior and love for her students, she is also the Transfiguration professor. Professor McGonagall is known for her intelligence, discipline, and unwavering dedication to the well-being of the students.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Filius Flitwick -->
+            <div class="carousel-item">
+                <div class="staff-container">
+                    <img src="flitwich.jpg" alt="Filius Flitwick" class="staff-image">
+                    <div class="staff-description">
+                        <h4>Filius Flitwick</h4>
+                        <p>Filius Flitwick is the Charms professor at Hogwarts and the Head of Ravenclaw House. As a skilled wizard, Professor Flitwick brings charm and humor to his classes. He is passionate about teaching young witches and wizards the art of spellcasting and magical charms.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Pomona Sprout -->
+            <div class="carousel-item">
+                <div class="staff-container">
+                    <img src="pomona.webp" alt="Pomona Sprout" class="staff-image">
+                    <div class="staff-description">
+                        <h4>Pomona Sprout</h4>
+                        <p>Pomona Sprout is the Herbology professor at Hogwarts and the Head of Hufflepuff House. Professor Sprout is known for her expertise in magical plants and her nurturing personality. She encourages students to appreciate the magical world of plants and nature.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Severus Snape -->
+            <div class="carousel-item">
+                <div class="staff-container">
+                    <img src="him.jpg" alt="Severus Snape" class="staff-image">
+                    <div class="staff-description">
+                        <h4>Severus Snape</h4>
+                        <p>Severus Snape is the Potions Master at Hogwarts and the Head of Slytherin House. His expertise in the Dark Arts and his mysterious demeanor make him a complex figure at Hogwarts. Professor Snape, although strict, plays a crucial role in the protection of the school and its students.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Rolanda Hooch -->
+            <div class="carousel-item">
+                <div class="staff-container">
+                    <img src="RolandaHooch.webp" alt="Rolanda Hooch" class="staff-image">
+                    <div class="staff-description">
+                        <h4>Rolanda Hooch</h4>
+                        <p>Madam Rolanda Hooch is the Flying instructor and Quidditch referee at Hogwarts. She teaches students how to ride broomsticks and ensures fair play during Quidditch matches.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Remus John Lupin -->
+            <div class="carousel-item">
+                <div class="staff-container">
+                    <img src="tumblr.jpg" alt="Remus John Lupin" class="staff-image">
+                    <div class="staff-description">
+                        <h4>Remus John Lupin</h4>
+                        <p>Remus Lupin is the Defense Against the Dark Arts professor at Hogwarts. Despite facing challenges due to his condition as a werewolf, Professor Lupin is a knowledgeable and compassionate teacher.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Rubeus Hagrid -->
+            <div class="carousel-item">
+                <div class="staff-container">
+                    <img src="Rubeushagrid.webp" alt="Rubeus Hagrid" class="staff-image">
+                    <div class="staff-description">
+                        <h4>Rubeus Hagrid</h4>
+                        <p>Rubeus Hagrid is the Keeper of Keys and Grounds at Hogwarts. He has a deep love for magical creatures and serves as the Care of Magical Creatures professor. Hagrid is known for his kind heart and loyalty.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Sybill Trelawney -->
+            <div class="carousel-item">
+                <div class="staff-container">
+                    <img src="Trelawney.webp" alt="Sybill Trelawney" class="staff-image">
+                    <div class="staff-description">
+                        <h4>Sybill Trelawney</h4>
+                        <p>Professor Sybill Trelawney is the Divination professor at Hogwarts. She possesses the gift of second sight and teaches students about predicting the future through various magical methods.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#teachersCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#teachersCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+
+    <!-- Add Bootstrap and jQuery scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    <script>
+        function showFounders() {
+            // Scroll to the founders section
+            document.getElementById('founders-section').scrollIntoView();
+        }
+   
+        function showAdministrators() {
+            // Scroll to the administrators section
+            document.getElementById('administrators-section').scrollIntoView();
+        }
+   
+        function showTeachers() {
+            // Scroll to the teachers section
+            document.getElementById('teachers-section').scrollIntoView();
+        }
+    </script>
+
+
+</body>
+
+
+</html>
+
+
+

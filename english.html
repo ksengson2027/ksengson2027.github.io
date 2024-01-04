@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+
+
+    <!-- Add Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            background-image: url('engbg.jpg');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+         /* Glowing Text */
+         .glowing-text {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            transition: text-shadow 0.5s ease-in-out;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+        }
+
+        /* Magical Transition */
+        .navbar {
+            background-color: transparent !important;
+            border: none;
+            transition: background-color 0.5s ease-in-out;
+            backdrop-filter: blur(10px);
+            font-family: 'Almendra', serif;
+        }
+
+        
+        .navbar:hover {
+            background-color: transparent;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: transparent;
+            transition: color 0.5s ease-in-out;
+        }
+
+        .navbar:hover .navbar-brand,
+        .navbar:hover .nav-link {
+            color: #ffcc00;
+        }
+        
+        /* Blurred Box */
+        .blurred-box1 {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 850px;
+            text-align: justify;
+            color: aliceblue;
+            font-size: 30px;
+            font-family: 'Almendra', serif;
+            margin: auto;
+            margin-bottom: 50px;
+        }
+
+        /* Blurred Box */
+        .blurred-box2 {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 850px;
+            text-align: justify;
+            color: aliceblue;
+            font-size: 30px;
+            font-family: 'Almendra', serif;
+            margin: auto;
+            margin-bottom: 50px;
+        }
+
+        /* Glowing Text */
+        .glowing-text {
+            text-shadow: 0 0 10px rgb(255, 138, 243);
+            transition: text-shadow 0.5s ease-in-out;
+        }
+        .glowing-text:hover {
+            text-shadow: 0 0 30px rgb(251, 225, 77);
+        }
+
+        h1 {
+            text-align: center;
+            color: aliceblue;
+            font-size: 150px;
+            font-family: 'Almendra SC', serif;
+            padding-top: 10px;
+            padding-bottom: 30px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        /* Glowing Text */
+        .glowing-text1 {
+            text-shadow: 0 0 10px rgb(255, 255, 255);
+            transition: text-shadow 0.5s ease-in-out;
+        }
+        .glowing-text1:hover {
+            text-shadow: 0 0 20px rgb(255, 255, 255);
+        }
+        
+        p {
+            text-align: center;
+            color: white;
+            padding-top: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-family: 'Almendra', serif;
+            font-size: 20px;
+        }  
+
+        img {
+            width: 100%;
+        }
+
+        .pics {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-right: 30px;
+            margin-top: 10px;
+            transition: transform 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .pics:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+        }
+
+        @media screen and (max-width: 1200px) {
+      h1,
+      p {
+        font-size: 150px;
+      }
+
+      p {
+        font-size: 35px;
+      }
+    }
+
+    @media screen and (max-width: 992px) {
+      h1,
+      p {
+        font-size: 120px;
+      }
+
+      p {
+        font-size: 30px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      h1,
+      p {
+        font-size: 80px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+
+    </style>
+</head>
+<body>
+    <!-- Add Bootstrap navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container" style="background-color: transparent;">
+            <a class="navbar-brand" href="#">Hogwarts</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active glowing-text"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item glowing-text"><a href="history.html" class="nav-link">Hogwarts: A History</a></li>
+                    <li class="nav-item glowing-text"><a href="syllabus.html" class="nav-link">Syllabus</a></li>
+                    <li class="nav-item glowing-text"><a href="4houses.html" class="nav-link">The Four Houses</a></li>
+                    <li class="nav-item glowing-text"><a href="extracurriculars.html" class="nav-link">Non - Academic Activities</a></li>
+                    <li class="nav-item glowing-text"><a href="contactpage.html" class="nav-link">Contacts</a></li>
+                    <li class="nav-item glowing-text"><a href="staff.html" class="nav-link">Staff</a></li> 
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <h1 class="glowing-text container"> Find a Way or Fade Away </h1>
+    <p class="container"> The collection of poems is about love and the different phases it may have. Much like the sonnet collection "My Little Portuguese", we aim to tell a story with the poems that were written. Furthermore, we hope to give the audience a new understanding and perception of love.</p>
+    <br>
+
+
+<!-- Add the text-center class to center the pictures -->
+<div class="blurred-box1 text-center">
+    <h2 class="glowing-text1">The Podcast Shakespearean Sonnets</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="sasha.html">
+                <img class="pics img-fluid" src="krabs.png" alt="krabs">
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="nix.html">
+                <img class="pics img-fluid" src="he.png" alt="he">
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="ysha.html">
+                <img class="pics img-fluid" src="page.png" alt="page">
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="blurred-box2 text-center">
+    <h2 class="glowing-text1">The Podcast Petrarchan Sonnets</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <a href="sashsash.html">
+            <img class="pics img-fluid" src="glimpse.png" alt="glimpse">
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="nixnix.html">
+            <img class="pics img-fluid" src="glow.png" alt="glow">
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="yshysh.html">
+            <img class="pics img-fluid" src="ocean.png" alt="ocean">
+            </a>
+        </div>
+    </div>
+</div>
+
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+

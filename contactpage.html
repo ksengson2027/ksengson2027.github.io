@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+
+
+    <!-- Add Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            background-image: url('office.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+
+        /* Glowing Text */
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            transition: text-shadow 0.5s ease-in-out;
+        }
+
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+        }
+
+
+        /* Magical Transition */
+        .navbar {
+            background-color: transparent !important;
+            border: none;
+            transition: background-color 0.5s ease-in-out;
+            backdrop-filter: blur(10px);
+            font-family: 'Almendra', serif;
+        }
+
+
+        .navbar:hover {
+            background-color: transparent;
+        }
+
+
+        .navbar-brand,
+        .nav-link {
+            color: transparent;
+            transition: color 0.5s ease-in-out;
+        }
+
+
+        .navbar:hover .navbar-brand,
+        .navbar:hover .nav-link {
+            color: #ffcc00;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: aliceblue;
+            font-size: 30vh;
+            font-family: 'UnifrakturMaguntia', cursive;
+            padding-top: 50px;
+        }
+
+
+        /* Blurred Box */
+        .blurred-box {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: -30px auto;
+            max-width: 1000px;
+            text-align: center;
+            color: aliceblue;
+            font-size: 30px;
+            font-family: 'Almendra', serif;
+        }
+
+        /* Adjusted styling for images */
+        .img-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .img-thumbnail {
+            width: 30%;
+        }
+
+
+        .button {
+            background-color: #6637a3ba;
+            border: none;
+            color: aliceblue;
+            padding: 5px 90px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 22px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+        }
+
+
+        .button1:hover {
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
+
+        .button2:hover {
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
+
+        /* Styling for the contact form with a touch of purple */
+        .modal-content {
+            background-color: rgb(59, 40, 96); /* Purple color with some transparency */
+        }
+
+
+        .modal-title,
+        .modal-body,
+        .modal-footer {
+            color: #fff; /* White text */
+        }
+
+
+        .form-control {
+            background-color: #fff; /* White background for form controls */
+            color: #000; /* Black text for form controls */
+        }
+
+
+        .btn-primary {
+            background-color: rgba(136, 43, 173, 0.784); /* Yellow color for the button */
+            border: none;
+        }
+
+
+        .btn-primary:hover {
+            background-color: rgba(82, 10, 110, 0.848); /* Darker yellow color on hover */
+        }
+    </style>
+</head>
+
+
+<body>
+    <!-- Add Bootstrap navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container" style="background-color: transparent;">
+            <a class="navbar-brand" href="#">Hogwarts</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active glowing-text"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item glowing-text"><a href="history.html" class="nav-link">Hogwarts: A History</a></li>
+                    <li class="nav-item glowing-text"><a href="syllabus.html" class="nav-link">Syllabus</a></li>
+                    <li class="nav-item glowing-text"><a href="4houses.html" class="nav-link">The Four Houses</a></li>
+                    <li class="nav-item glowing-text"><a href="extracurriculars.html" class="nav-link">Non - Academic Activities</a></li>
+                    <li class="nav-item glowing-text"><a href="#" class="nav-link">Contacts</a></li>
+                    <li class="nav-item glowing-text"><a href="staff.html" class="nav-link">Staff</a></li>                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <h1>Contacts</h1>
+
+
+    <!-- Blurred Box for Contacts Information -->
+    <div class="blurred-box">
+        <!-- Add your contacts information here -->
+
+
+        <p>
+            <h2>Do you want to be part of the Wizarding world?</h2>
+        </p>
+
+
+        <!-- "Yes" button triggers the modal form -->
+        <button class="button button1" data-toggle="modal" data-target="#contactModal">Yes</button>
+        <button class="button button1">No</button>
+        <br>
+        <br>
+        <p>Contact the Hogwarts Admission Office via phone</p>
+        <p>(605) 475-6961</p>
+        <p>OR</p>
+        <p> Send a letter to Headmaster Albus Percival Wulfric Dumbledore or to Deputy Headmistress Minerva
+            McGonagall and address it to Hogwarts School of Witchcraft and Wizardry, Hogwarts Castle, Scottish
+            Highlands, Great Britain </p>
+
+
+        <!-- Images displayed side by side -->
+        <div class="img-container">
+            <img src="headmaster.jpg" alt="dumble" class="img-fluid img-thumbnail">
+            <img src="headmistress.jpg" alt="mcgon" class="img-fluid img-thumbnail">
+        </div>
+    </div>
+
+
+    <!-- Modal Form -->
+    <div class="modal" id="contactModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Contact Hogwarts Admission Office</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <!-- Add your form elements here -->
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea class="form-control" id="message" rows="3" placeholder="Leave your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+
+</html>

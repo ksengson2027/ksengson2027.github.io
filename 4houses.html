@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+
+    <!-- Add Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Almendra&family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Milonga&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url('forhousesbg.png');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: 'Almendra', serif;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        /* Glowing Text */
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(90, 117, 255, 0.8);
+            transition: text-shadow 0.5s ease-in-out;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgb(219, 197, 84);
+        }
+
+        /* Magical Transition */
+        .navbar {
+            background-color: transparent !important;
+            border: none;
+            transition: background-color 0.5s ease-in-out;
+            backdrop-filter: blur(10px);
+            font-family: 'Almendra', serif;
+        }
+
+        .navbar:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            transition: color 0.5s ease-in-out;
+        }
+
+        .navbar:hover .navbar-brand,
+        .navbar:hover .nav-link {
+            color: #ffcc00;
+        }
+
+        h1 {
+            text-align: center;
+            color: aliceblue;
+            font-size: 20vh;
+            font-family: 'Cinzel Decorative', serif;
+            padding-top: 40px;
+            margin: 0;
+        }
+
+        /* Adjusted styling for images */
+        .img-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+
+        .house-section {
+            height: 400px;
+            width: 340px;
+            margin: 5px;
+            padding:20px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.321);
+            backdrop-filter: blur(100px);
+            color: aliceblue;
+            font-family: 'Almendra', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .house-section:hover {
+            transform: scale(1.05);
+        }
+
+        .house-image {
+            height: 60%;
+            width: 70%;
+            border-radius: 10px;
+            margin-top: 0px;
+        }
+
+        .house-section p {
+            font-size: 28px; /* Increase font size for house names */
+            margin-bottom: 10px; /* Add some space below the house names */
+        }
+
+        .house-description {
+            font-size: 20px;
+        }
+
+        .btn-primary,
+        .btn-house {
+            background-color: rgba(136, 43, 173, 0.784);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            margin: 10px;
+            transition: background-color 0.5s ease-in-out;
+        }
+
+        .btn-primary:hover,
+        .btn-house:hover {
+            background-color: rgba(82, 10, 110, 0.848);
+        }
+
+        .blurred-box {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: left;
+            color: aliceblue;
+            font-size: 16px;
+            font-family: 'Almendra', serif;
+            position: relative;
+            z-index: 1;
+        }
+
+        .img-fluid {
+            border-radius: 15px;
+        }
+
+        .sorting-form {
+            margin: 20px;
+            padding: 20px;
+            background: url('sortinghatmoving.gif') center/cover; /* Blurred background image */
+            border-radius: 15px;
+            color: #fff; /* White text color */
+            font-family: 'Almendra', serif;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Stronger shadow effect */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sorting-question label {
+            font-size: 20px; /* Increase font size for questions */
+            display: block;
+            margin-bottom: 10px;
+            color: #fff; /* White text color */
+        }
+
+        .sorting-question select {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px; /* Adjust font size for select boxes */
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+        }
+        .sorting-result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            color: #333; /* Dark text color */
+            font-family: 'Almendra', serif;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none; /* Hide by default */
+        }
+
+        .btn-sort {
+            background-color: rgba(136, 43, 173, 0.784);
+            border: none;
+            cursor: pointer;
+            padding: 14px 24px;
+            margin-top: 10px;
+            border-radius: 8px; /* Rounded corners */
+            color: #fff; /* White text color */
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-sort:hover {
+            background-color: rgba(82, 10, 110, 0.848);
+        }
+
+        /* Added overlay for a darker tint on the background image */
+        .sorting-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay color */
+            z-index: -1;
+        }
+
+        .house-section:nth-child(1) {
+            box-shadow: 0 0 20px 7px #ae0000; /* Adjust the shadow properties as needed */
+        }
+
+        /* Add this style to create a yellow glow around the Hufflepuff House section */
+        .house-section:nth-child(2) {
+            box-shadow: 0 0 20px 7px #e5c301; /* Adjust the shadow properties as needed */
+        }
+
+        /* Add this style to create a blue glow around the Ravenclaw House section */
+        .house-section:nth-child(3) {
+            box-shadow: 0 0 20px 7px #001ea5; /* Adjust the shadow properties as needed */
+        }
+
+        /* Add this style to create a green glow around the Slytherin House section */
+        .house-section:nth-child(4) {
+            box-shadow: 0 0 20px 7px #00cf00d7; /* Adjust the shadow properties as needed */
+        }
+
+        @media (max-width: 768px) {
+            /* Styles for screens smaller than 768px wide */
+            h1 {
+                font-size: 80px;
+            }
+
+            .house-section {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            /* Styles for screens smaller than 576px wide */
+            h1 {
+                font-size: 60px;
+            }
+
+            .navbar {
+                padding: 10px;
+            }
+
+            .navbar-brand {
+                font-size: 20px;
+            }
+
+            .navbar-toggler {
+                padding: 0.2rem 0.4rem;
+            }
+
+            .glowing-text {
+                font-size: 14px;
+            }
+
+            .house-section {
+                padding: 10px;
+                text-align: center;
+            }
+
+            .house-image {
+                height: 50%;
+                width: 60%;
+            }
+
+            .house-section p {
+                font-size: 18px;
+            }
+
+            .btn-sort {
+                padding: 12px 20px;
+            }
+
+            .sorting-question label,
+            .sorting-question select {
+                font-size: 16px;
+            }
+
+            .sorting-form {
+                margin: 10px;
+                padding: 10px;
+            }
+
+            .sorting-result {
+                padding: 10px;
+            }
+        }
+
+    </style>
+
+    <script>
+        function toggleGryffindorStaff() {
+            var staffList = document.getElementById("gryffindorStaffList");
+            staffList.style.display = staffList.style.display === "none" ? "block" : "none";
+        }
+
+        function getSorted() {
+            var color = document.getElementById("question1").value.toLowerCase();
+            var trait = document.getElementById("question2").value.toLowerCase();
+            var animal = document.getElementById("question3").value.toLowerCase();
+
+            var selectedHouse;
+
+            // Sorting logic based on answers
+            if (color === "red" && trait === "bravery" && animal === "lion") {
+                selectedHouse = "Gryffindor";
+            } else if (color === "yellow" && trait === "loyalty" && animal === "badger") {
+                selectedHouse = "Hufflepuff";
+            } else if (color === "blue" && trait === "intelligence" && animal === "bird") {
+                selectedHouse = "Ravenclaw";
+            } else if (color === "green" && trait === "ambition" && animal === "snake") {
+                selectedHouse = "Slytherin";
+            } else {
+                selectedHouse = "Unable to determine your house.";
+            }
+
+            var resultContainer = document.getElementById("sortingResult");
+            resultContainer.innerHTML = "<h3>Sorting Result:</h3><p>" + selectedHouse + "</p>";
+            resultContainer.style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Add Bootstrap navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container" style="background-color: transparent;">
+            <a class="navbar-brand" href="#">Hogwarts</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active glowing-text"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item glowing-text"><a href="history.html" class="nav-link">Hogwarts: A History</a></li>
+                    <li class="nav-item glowing-text"><a href="syllabus.html" class="nav-link">Syllabus</a></li>
+                    <li class="nav-item glowing-text"><a href="#" class="nav-link">The Four Houses</a></li>
+                    <li class="nav-item glowing-text"><a href="extracurriculars.html" class="nav-link">Non - Academic Activities</a></li>
+                    <li class="nav-item glowing-text"><a href="contactpage.html" class="nav-link">Contacts</a></li>
+                    <li class="nav-item glowing-text"><a href="staff.html" class="nav-link">Staff</a></li>                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1 class="glowing-text">Four Houses</h1>
+
+    <!-- House Sections -->
+    <div class="img-container">
+        <!-- Gryffindor House -->
+        <div class="house-section">
+            <p style="color: rgb(157, 8, 8)"><b>Gryffindor House</b></p>
+            <img src="gryffindor.gif" alt="Gryffindor" class="house-image">
+            <p>
+                <h5>Gryffindor values courage, bravery, nerve, and chivalry. Its emblematic animal is the lion, and its
+                colors are red and gold.</h5>
+            </p>
+        </div>
+
+        <!-- Hufflepuff House -->
+        <div class="house-section">
+            <p style="color: rgb(249, 229, 9)"><b>Hufflepuff House</b></p>
+            <img src="hufflepuff.gif" alt="Hufflepuff" class="house-image">
+            <p>
+                <h5>Hufflepuff values hard work, patience, justice, and loyalty. Its emblematic animal is the badger, and
+                    its colors are yellow and black.</h5>
+            </p>
+        </div>
+
+        <!-- Ravenclaw House -->
+        <div class="house-section">
+            <p style="color: rgb(0, 43, 185)"><b>Ravenclaw House</b></p>
+            <img src="ravenclaw.gif" alt="Ravenclaw" class="house-image">
+            <p><h5>Ravenclaw values intelligence, creativity, learning, and wit. Its emblematic animal is the eagle, andits colors are blue and silver.</h5>
+            </p>
+        </div>
+
+        <!-- Slytherin House -->
+        <div class="house-section">
+            <p style="color: rgb(17, 249, 9)"><b>Slytherin House</b></p>
+            <img src="slytherin.gif" alt="Slytherin"
+                class="house-image">
+            <p>
+                <h5>Slytherin values ambition, cunning, leadership, and resourcefulness. Its emblematic animal is the
+                    serpent, and its colors are green and silver.</h5>
+            </p>
+        </div>
+    </div>
+
+    <div class="sorting-form">
+        <h2>Get Sorted</h2>
+        <div class="sorting-question">
+            <label for="question1">Question 1: What is your favorite color?</label>
+            <select id="question1">
+                <option value="red">Red</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+            </select>
+        </div>
+        <div class="sorting-question">
+            <label for="question2">Question 2: What trait do you value the most?</label>
+            <select id="question2">
+                <option value="bravery">Bravery</option>
+                <option value="loyalty">Loyalty</option>
+                <option value="intelligence">Intelligence</option>
+                <option value="ambition">Ambition</option>
+            </select>
+        </div>
+        <div class="sorting-question">
+            <label for="question3">Question 3: Choose an animal:</label>
+            <select id="question3">
+                <option value="lion">Lion</option>
+                <option value="badger">Badger</option>
+                <option value="bird">Bird</option>
+                <option value="snake">Snake</option>
+            </select>
+        </div>
+    
+        <!-- ... Existing form content ... -->
+        <button class="btn btn-sort" onclick="getSorted()">Get Sorted</button>
+        <!-- Result container -->
+        <div id="sortingResult" class="sorting-result">
+    </div>
+    </div>
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

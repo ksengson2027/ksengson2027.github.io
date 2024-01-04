@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+
+    <!-- Add Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra&family=Cinzel+Decorative:wght@700&family=Milonga&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url('purplesortinghat.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        /* Magical Transition */
+        .navbar {
+            background-color: transparent !important;
+            border: none;
+            transition: background-color 0.5s ease-in-out;
+            backdrop-filter: blur(10px);
+            font-family: 'Almendra', serif;
+        }
+
+        .navbar:hover {
+            background-color: transparent;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: transparent;
+            transition: color 0.5s ease-in-out;
+        }
+
+        .navbar:hover .navbar-brand,
+        .navbar:hover .nav-link {
+            color: #ffcc00;
+        }
+
+        h1 {
+            text-align: center;
+            color: aliceblue;
+            font-size: 200px;
+            font-family: 'Milonga', serif;
+            padding-top: 50px;
+            text-shadow: 0 0 10px #fffcfc, 0 0 5px #7c18fe;
+        }
+
+        /* Blurred Box Styling */
+        .history-wrapper {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            color: rgb(255, 255, 255);
+            font-family: 'Almendra', serif;
+            max-width: 50%;
+            margin: 0px 0;
+            margin-left: 110px;
+            margin-right: 0;
+            float: left;
+        }
+
+        .History-description {
+            font-size: 3.5vh;
+        }
+
+        .History {
+            font-size: 6vh;
+            font-family: 'Cinzel Decorative', serif;
+            text-align: center;
+        }
+
+        /* Style for the video container */
+        .video-container {
+            border-radius: 30px;
+            max-width: 85%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        /* Style for the video itself */
+        .video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Image Styles */
+        img {
+            margin-right: 20px;
+            border-radius: 20px;
+            margin-left: 20px;
+        }
+
+        .storage {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            margin: 100px;
+            margin-top: 30px;
+        }
+
+        .pic {
+            margin-bottom: 50px;
+            width: 30vw;
+            height: 50vh;
+        }
+
+        /* Glowing Text */
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            transition: text-shadow 0.5s ease-in-out;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgb(68, 33, 118);
+        }
+
+        .purple {
+            padding-bottom: 50px;
+        }
+
+        /* Responsive Text Classes */
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 100px;
+            }
+
+            .history-wrapper {
+                max-width: 100%;
+                margin-left: 20px;
+            }
+
+            .History {
+                font-size: 4vh;
+            }
+
+            .History-description {
+                font-size: 2.5vh;
+            }
+
+            .navbar-brand {
+                font-size: 24px;
+            }
+
+            .nav-link {
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            h1 {
+                font-size: 120px;
+            }
+
+            .history-wrapper {
+                max-width: 100%;
+                margin-left: 20px;
+            }
+
+            .History {
+                font-size: 4.5vh;
+            }
+
+            .History-description {
+                font-size: 3vh;
+            }
+
+            .navbar-brand {
+                font-size: 28px;
+            }
+
+            .nav-link {
+                font-size: 18px;
+            }
+            .pic {
+                margin-bottom: 20px;
+                margin-right:250px;
+                width:90vw;
+                height:60vh;
+            }
+
+        }
+
+        @media (min-width: 769px) and (max-width: 992px) {
+            h1 {
+                font-size: 150px;
+            }
+
+            .history-wrapper {
+                max-width: 100%;
+                margin-left: 40px;
+            }
+
+            .History {
+                font-size: 5vh;
+            }
+
+            .History-description {
+                font-size: 3.5vh;
+            }
+
+            .navbar-brand {
+                font-size: 32px;
+            }
+
+            .nav-link {
+                font-size: 20px;
+            }
+        }
+
+        /* Adjustments for smaller screens */
+        @media (max-width: 992px) {
+            .storage {
+                margin: 20px;
+            }
+
+            .pic {
+                margin-bottom: 20px;
+                margin-right:80px;
+                width:60vw;
+                height:30vh;
+            }
+        }
+
+        /* Navbar Responsiveness */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 24px;
+    }
+
+    .navbar-toggler {
+        padding: 0.2rem 0.4rem;
+    }
+
+    .navbar-nav {
+        margin-top: 10px;
+    }
+
+    .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+}
+
+/* Header (H1) Responsiveness */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 100px;
+        padding-top: 20px;
+    }
+}
+
+/* History Wrapper Responsiveness */
+@media (max-width: 576px) {
+    .history-wrapper {
+        max-width: 100%;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .history-wrapper {
+        max-width: 100%;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+/* Image (Storage) Responsiveness */
+@media (max-width: 992px) {
+    .storage {
+        margin: 20px;
+    }
+
+    .pic {
+        margin-bottom: 20px;
+    }
+}
+
+/* Blurred Box Styling */
+.history-wrapper {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 15px;
+    color: rgb(255, 255, 255);
+    font-family: 'Almendra', serif;
+    max-width: 50%;
+    margin-left: 110px ;
+    float: left;
+    width: 60%; /* Adjust the width based on your preference */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .history-wrapper,
+    .storage {
+        max-width: 100%;
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .pic {
+        margin-bottom: 20px;
+    }
+}
+
+
+    </style>
+
+    <script>
+        function toggleGryffindorStaff() {
+            var staffList = document.getElementById("gryffindorStaffList");
+            staffList.style.display = staffList.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Add Bootstrap navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container" style="background-color: transparent;">
+            <a class="navbar-brand" href="#">Hogwarts</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active glowing-text"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item glowing-text"><a href="#" class="nav-link">Hogwarts: A History</a></li>
+                    <li class="nav-item glowing-text"><a href="syllabus.html" class="nav-link">Syllabus</a></li>
+                    <li class="nav-item glowing-text"><a href="4houses.html" class="nav-link">The Four Houses</a></li>
+                    <li class="nav-item glowing-text"><a href="extracurriculars.html" class="nav-link">Non - Academic Activities</a></li>
+                    <li class="nav-item glowing-text"><a href="contactpage.html" class="nav-link">Contacts</a></li>
+                    <li class="nav-item glowing-text"><a href="staff.html" class="nav-link">Staff</a></li>                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1 class="glowing-text">History</h1>
+
+    <video class="video-container text-center" autoplay muted loop>
+        <source src="video.mp4" type="video/mp4">
+    </video>
+
+    <div class="history-wrapper">
+        <p class="History">History of Hogwarts</p>
+        <br>
+        <p class="History-description text-left">Hogwarts School of Witchcraft and Wizardry, shortened Hogwarts, is a school of magic for witches and wizards between the ages of eleven and eighteen. It is the primary setting for the first six books of the Harry Potter series by J.K. Rowling. Hogwarts is a place of learning, adventure, and friendship, where students develop their magical abilities and form lifelong bonds.</p>
+        <br>
+        <br>
+        <p class="History-description text-left">The school was founded over a thousand years ago by four powerful witches and wizards: Godric Gryffindor, Helga Hufflepuff, Rowena Ravenclaw, and Salazar Slytherin. Each founder established one of the four houses within Hogwarts, and the Sorting Hat, a magical hat with the ability to read the minds of students, was created to sort students into these houses based on their personalities and values.</p>
+        <br>
+        <br>
+        <p class="History-description text-left">Hogwarts Castle, where the school is located, is a vast, enchanted castle with numerous towers and secret passages. The castle is protected by various magical spells and creatures, providing a safe and magical environment for its students. Throughout its long history, Hogwarts has seen triumphs and challenges, with its students facing magical creatures, dark forces, and the complexities of growing up in a magical world.</p>
+        <br>
+        <br>
+        <p class="History-description text-left">The history of Hogwarts is intertwined with the broader wizarding world and the events that shape the magical community. It continues to be a place of wonder and discovery for new generations of witches and wizards, ensuring that the magic of Hogwarts lives on...</p>
+        <br>
+    </div>
+
+    <div class="storage">
+        <img class="pic" src="https://static.wikia.nocookie.net/harrypotter/images/e/e1/Hogwarts_Castle_DHF2.jpg" alt="" width="500" height="500">
+        <img class="pic" src="https://i0.wp.com/news.limbaughtoyota.com/wp-content/uploads/sites/2/2017/02/Hogwarts-Houses-Birmingham.png?resize=502%2C456" alt="">
+        <img class="pic" src="wizards.png" alt="">
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

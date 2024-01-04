@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hogwarts School of Witchcraft and Wizardry</title>
+  <!-- Add Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Della+Respira&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-image: url('bgpic.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Almendra', serif;
+    }
+
+    .header-container {
+      text-align: center;
+    }
+
+    h1, p {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 200px;
+      background: linear-gradient(to bottom, #eab647, #e4af3d, #ad7804, #644504);
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      filter: drop-shadow(4px 2px #333);
+      visibility: hidden;
+    }
+
+    p {
+      color: #22579e;
+      /* Updated color */
+      font-family: 'Milonga', serif;
+      font-size: 45px;
+    }
+
+
+    @media screen and (max-width: 1200px) {
+      h1,
+      p {
+        font-size: 150px;
+      }
+
+
+      p {
+        font-size: 35px;
+      }
+    }
+
+
+    @media screen and (max-width: 992px) {
+      h1,
+      p {
+        font-size: 120px;
+      }
+
+
+      p {
+        font-size: 30px;
+      }
+    }
+
+
+    @media screen and (max-width: 768px) {
+      h1,
+      p {
+        font-size: 80px;
+      }
+
+
+      p {
+        font-size: 20px;
+      }
+    }
+
+
+    .hogwarts-sign {
+      width: 80%;
+      max-width: 600px;
+      margin: 20px;
+    }
+
+
+    .shadow {
+      position: absolute;
+      width: 200vw;
+      height: 200vh;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-image: radial-gradient(circle at center, transparent, #000 10%);
+      display: block;
+    }
+
+
+    .navbar {
+      background-color: transparent !important;
+      border: none;
+      transition: background-color 0.5s ease-in-out;
+      backdrop-filter: blur(10px);
+    }
+
+
+    .navbar-brand,
+    .nav-link {
+      color: #000;
+      transition: color 0.5s ease-in-out;
+    }
+
+
+    .navbar-toggler {
+      border: none;
+      background-color: transparent !important;
+    }
+
+
+    .navbar-toggler-icon {
+      background-color: transparent !important;
+    }
+
+
+    .navbar:hover {
+      background-color: transparent;
+    }
+
+
+    .navbar:hover .navbar-brand,
+    .navbar:hover .nav-link {
+      color: #ffcc00;
+    }
+
+
+    .lumos-button {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: transparent;
+      color: #060606;
+      border: 2px solid #080808;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+
+    .lumos-button:hover {
+      background-color: #ffcc00;
+      color: #000;
+      text-decoration: none;
+    }
+
+
+    .wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+
+    .light {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ffcc00;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      display: none;
+    }
+
+
+    @media screen and (max-width: 768px) {
+      .light {
+        width: 15px;
+        height: 15px;
+      }
+    }
+
+
+    @media screen and (max-width: 576px) {
+      .light {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="header-container">
+    <h1 id="hogwartsText">HOGWARTS</h1>
+    <p id="wizardryText">School of Witchcraft and Wizardry</p>
+  </div>
+
+
+  <!-- Add Bootstrap navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container" style="background-color: transparent;">
+      <a class="navbar-brand" href="#">Hogwarts</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active glowing-text"><a href="#" class="nav-link">Home</a></li>
+          <li class="nav-item glowing-text"><a href="history.html" class="nav-link">Hogwarts: A History</a></li>
+          <li class="nav-item glowing-text"><a href="syllabus.html" class="nav-link">Syllabus</a></li>
+          <li class="nav-item glowing-text"><a href="4houses.html" class="nav-link">The Four Houses</a></li>
+          <li class="nav-item glowing-text"><a href="extracurriculars.html" class="nav-link">Non - Academic Activities</a></li>
+          <li class="nav-item glowing-text"><a href="contactpage.html" class="nav-link">Contacts</a></li>
+          <li class="nav-item glowing-text"><a href="staff.html" class="nav-link">Staff</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="wrapper">
+    <div class="shadow"></div>
+  </div>
+
+
+  <a class="lumos-button" onclick="toggleDarkness()">Lumos</a>
+  <div class="light"></div>
+
+
+  <!-- Add Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  <script>
+    const shadow = document.querySelector('.shadow');
+    const light = document.querySelector('.light');
+    const hogwartsText = document.getElementById('hogwartsText');
+    const wizardryText = document.getElementById('wizardryText');
+    let isTextVisible = false;
+
+
+    function toggleDarkness() {
+      shadow.style.display = shadow.style.display === 'none' ? 'block' : 'none';
+
+
+      if (!isTextVisible) {
+        hogwartsText.style.visibility = 'visible';
+        wizardryText.style.visibility = 'visible';
+        isTextVisible = true;
+      } else {
+        hogwartsText.style.visibility = 'hidden';
+        wizardryText.style.visibility = 'hidden';
+        isTextVisible = false;
+      }
+    }
+
+
+    document.addEventListener('mousemove', (e) => {
+      let x = e.clientX - (document.documentElement.clientWidth * 1.5);
+      let y = e.clientY - (document.documentElement.clientHeight * 1.5);
+      shadow.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+    });
+
+
+    function addLightEffect(element) {
+      element.classList.add('light-effect');
+      setTimeout(() => {
+        element.classList.remove('light-effect');
+      }, 1000);
+    }
+
+
+    function moveLight(event) {
+      let x = (event.clientX / window.innerWidth) * 100;
+      let y = (event.clientY / window.innerHeight) * 100;
+
+
+      light.style.display = 'block';
+      light.style.left = x + '%';
+      light.style.top = y + '%';
+    }
+  </script>
+</body>
+
+
+</html>

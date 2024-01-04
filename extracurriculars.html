@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+
+
+
+
+    <!-- Add Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Milonga&display=swap" rel="stylesheet">
+
+
+
+
+    <style>
+        body {
+            background-image: url('boogsh.jpg');
+            background-size: cover;
+            overflow-x: hidden; /* Disable horizontal scrolling */
+        }
+
+
+
+
+        /* Glowing Text */
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            transition: text-shadow 0.5s ease-in-out;
+        }
+
+
+
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgb(255, 158, 215);
+        }
+
+
+
+
+        /* Magical Transition */
+        .navbar {
+            background-color: transparent !important;
+            border: none;
+            transition: background-color 0.5s ease-in-out;
+            backdrop-filter: blur(10px);
+            font-family: 'Almendra', serif;
+        }
+
+
+
+
+        .navbar:hover {
+            background-color: transparent;
+        }
+
+
+
+
+        .navbar-brand,
+        .nav-link {
+            color: transparent;
+            transition: color 0.5s ease-in-out;
+        }
+
+
+
+
+        .navbar:hover .navbar-brand,
+        .navbar:hover .nav-link {
+            color: #ffcc00;
+        }
+
+
+
+
+        h1 {
+            text-align: center;
+            color: aliceblue;
+            font-size: 120px;
+            font-family: 'Milonga', serif;
+            padding-top: 50px;
+            margin: 0;
+        }
+
+
+
+
+        /* Extracurricular Activities Section */
+        .activities-section {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(68, 0, 128, 0.688);
+            border-radius: 15px;
+            color: aliceblue;
+            font-family: 'Almendra', serif;
+            white-space: nowrap;
+            overflow-x: scroll;
+        }
+
+
+
+
+        .activity-card {
+            display: inline-block;
+            min-height: 300px;
+            width: 500px; /* Set the width to be longer than the height */
+            margin-right: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+
+
+
+        .activity-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+        }
+
+
+
+
+        .activity-image {
+            max-width: 100%;
+            max-height: 200px; /* Set a maximum height for the images */
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+
+
+
+        .activity-image:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+
+
+
+<body class="container">
+    <!-- Add Bootstrap navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container" style="background-color: transparent;">
+            <a class="navbar-brand" href="#">Hogwarts</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active glowing-text"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item glowing-text"><a href="history.html" class="nav-link">Hogwarts: A History</a></li>
+                    <li class="nav-item glowing-text"><a href="syllabus.html" class="nav-link">Syllabus</a></li>
+                    <li class="nav-item glowing-text"><a href="4houses.html" class="nav-link">The Four Houses</a></li>
+                    <li class="nav-item glowing-text"><a href="#" class="nav-link">Non - Academic Activities</a></li>
+                    <li class="nav-item glowing-text"><a href="contactpage.html" class="nav-link">Contacts</a></li>
+                    <li class="nav-item glowing-text"><a href="staff.html" class="nav-link">Staff</a></li>                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <h1 class="glowing-text">Non-Academic Activites</h1>
+    <!-- Extracurricular Activities Section -->
+    <div class="activities-section">
+        <div class="activity-card col-sm-4">
+            <h3>Quidditch Teams</h3>
+            <img src="https://media.harrypotterfanzone.com/slytherin-and-gryffindor-quidditch-teams.jpg" alt="Quidditch Teams" class="activity-image">
+            <p>Join one of the four Quidditch teams at Hogwarts <br> and practice flying, scoring goals, and participating <br> in friendly matches.</p>
+        </div>
+
+
+
+
+        <div class="activity-card col-sm-4" >
+            <h3>Dueling Club</h3>
+            <img src="https://d.newsweek.com/en/full/836831/harry-potter-chamber-secrets-dcb09058.jpg" alt="Dueling Club" class="activity-image">
+            <p>Hone your magical dueling skills in the Dueling <br> Club. Learn defensive and offensive spells, and <br> engage in duels with fellow students.</p>
+        </div>
+
+
+
+
+        <div class="activity-card col-sm-4">
+            <h3>Magical Creatures Care</h3>
+            <img src="https://media.harrypotterfanzone.com/arriving-at-care-of-magical-creatures.jpg" alt="Magical Creatures Care" class="activity-image">
+            <p>Join the Magical Creatures Care Club to learn about <br> and care for various magical creatures. Participate <br> in feeding sessions and caretaking duties.</p>
+        </div>
+
+
+
+
+        <div class="activity-card col-sm-4">
+            <h3>Wizard Chess Tournaments</h3>
+            <img src="https://www.regencychess.co.uk/blog/wp-content/uploads/phpVNdMYb.jpeg" alt="Wizard Chess Tournaments" class="activity-image">
+            <p>Compete in monthly Wizard Chess Tournaments, <br> showcasing your strategic and tactical skills in the <br> wizarding world's version of chess.</p>
+        </div>
+
+
+
+
+        <div class="activity-card col-sm-4">
+            <h3>Enchanted Gardens</h3>
+            <img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2019/04/Harry-Potter-Forbidden-Forest.jpg" alt="Enchanted Gardens" class="activity-image">
+            <p>Explore the Enchanted Gardens and learn about <br> magical plants. Attend workshops on herbology, <br> potion ingredients, and magical gardening.</p>
+        </div>
+
+
+
+
+        <div class="activity-card col-sm-4">
+            <h3>Wizarding Photography Club</h3>
+            <img src="https://assets.teenvogue.com/photos/59a99cd4acfda51861e256af/16:9/w_1248,h_702,c_limit/colin-tout.jpg" alt="Wizarding Photography Club" class="activity-image">
+            <p>Join the Wizarding Photography Club to capture <br> magical moments at Hogwarts. Learn about <br> magical photography techniques!</p>
+        </div>
+    </div>
+
+
+
+
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+
+
+
+</html>

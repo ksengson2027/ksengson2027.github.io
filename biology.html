@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+
+
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Cinzel+Decorative:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+       body {
+        background-image: url(biolab.png);            
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        }
+       
+        /* Glowing Text */
+        .glowing-text {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            transition: text-shadow 0.5s ease-in-out;
+        }
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+        }
+        /* Magical Transition */
+        .navbar {
+            background-color: transparent !important;
+            border: none;
+            transition: background-color 0.5s ease-in-out;
+            backdrop-filter: blur(10px);
+            font-family: 'Almendra', serif;
+        }
+
+        .navbar:hover {
+            background-color: transparent;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: transparent;
+            transition: color 0.5s ease-in-out;
+        }
+
+        .navbar:hover .navbar-brand,
+        .navbar:hover .nav-link {
+            color: #ffcc00;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: aliceblue;
+            font-size: 180px;
+            font-family: 'Almendra SC', serif;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            text-shadow: 0 0 10px #fffcfc, 0 0 5px #7c18fe;
+        }
+        h2 {
+            text-align: center;
+            color: #7100b8;
+            font-size: 70px;
+            font-family: 'Almendra SC', serif;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-shadow: 0 0 10px #fffcfc, 0 0 25px #ffffff;
+        }
+
+
+        h3 {
+            text-align: center;
+            color: #7100b8;
+            font-size: 58px;
+            font-family: 'Almendra SC', serif;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            text-shadow: 0 0 10px #fffcfc, 0 0 25px #ffffff;
+        }
+        /* Blurred Box */
+        .blurred-box {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: -30px auto;
+            max-width: 1200px;
+            text-align: center;
+            color: aliceblue;
+            font-size: 24px;
+            font-family: 'Almendra', serif;
+            position: relative; /* Added position relative */
+            cursor: pointer;
+            background-image: linear-gradient(rgba(251, 250, 250, 0.645), rgba(128, 0, 255, 0.519));
+        }
+
+
+        /* Hide the sidenav initially */
+        #mySidenav {
+            display: none; /* Initially hidden */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgb(141, 62, 210);
+            padding: 5px 0; /* Thinner bar */
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            opacity: 0; /* Initially transparent */
+            transition: opacity 0.3s ease-in-out;
+        }
+
+
+        #mySidenav a {
+            transition: 0.3s;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            background-color: rgb(141, 62, 210);
+            opacity: 0; /* Initially transparent */
+            transform: translateY(-10px); /* Initially move up */
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        #mySidenav a:hover {
+            background-color: rgb(95, 11, 168);
+        }
+
+        /* Additional styling for content divs */
+        .content {
+            display: none;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        /* Animate the appearance of buttons */
+        .blurred-box:hover #mySidenav {
+            opacity: 1; /* Fully visible on hover */
+        }
+
+        /* Animate the appearance of buttons */
+        .blurred-box:hover #mySidenav a {
+            opacity: 1; /* Fully visible on hover */
+            transform: translateY(0); /* Move down on hover */
+        }
+        .long-description {
+            display: none; /* Initially hide the long description */
+        }
+
+        .content-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 30px;
+        }
+
+        .material-container {
+        border: 5px solid #7100b8;
+        border-radius: 10px;
+        padding: 15px;
+        width: 48%; /* Adjusted width */
+        box-sizing: border-box;
+        font-size: 3vh;
+        box-shadow: 0 0 50px 20px #d592ff;
+       
+        }
+
+        .material-list {
+        max-width: 100%;
+        }
+        .material-list h2 {
+            color: #7100b8; /* Header color */
+            text-shadow: 0 0 10px #fffcfc, 0 0 5px #ffffff;
+        }
+
+        .column-list {
+    column-count: 2; /* Number of columns */
+    column-gap: 20px; /* Adjust the gap between columns */
+}
+.image-container {
+        width: 45%; /* Adjusted width */
+        box-sizing: border-box;
+        transition: transform 0.3s ease-in-out;
+        }
+        .image-container img:hover {
+        transform: scale(1.1);
+        }
+
+        .image-container img {
+            max-width: 100%; /* Make sure the image doesn't overflow its container */
+            height: 50vh; /* Maintain the aspect ratio of the image */
+            width: 40vw;
+            border-radius: 10px; /* Optional: Add border-radius for a rounded look */
+            border: 5px solid #7100b8;
+            box-shadow: 0 0 50px 20px #d592ff;
+        }
+
+       .image-container1 {
+            width: 25%;
+            box-sizing: border-box;
+            margin: 10px;
+            transition: transform 0.3s ease-in-out;
+            display: inline-block;
+        }
+
+        .image-container1 img:hover {
+        transform: scale(1.1);
+        }
+
+        .image-container1 img {
+            max-width: 100%; /* Make sure the image doesn't overflow its container */
+            height: 50vh; /* Maintain the aspect ratio of the image */
+            width: 30vw;
+            border-radius: 10px; /* Optional: Add border-radius for a rounded look */
+            border: 5px solid #7100b8;
+            box-shadow: 0 0 50px 20px #d592ff;
+        }
+
+        .image-container3 img {
+            max-width: 100%; /* Make sure the image doesn't overflow its container */
+            height: 50vh; /* Maintain the aspect ratio of the image */
+            width: 50vw;
+            border-radius: 10px; /* Optional: Add border-radius for a rounded look */
+            border: 5px solid #7100b8;
+            box-shadow: 0 0 50px 20px #d592ff;
+        }
+
+        .image-container3 {
+            padding-top: 15px;
+        }
+
+        .image-container3 img:hover {
+        transform: scale(1.1);
+        }
+
+        .procedure-box {
+            border: 5px solid #7100b8; /* Outline color */
+            border-radius: 10px; /* Adjust the border-radius as needed */
+            padding: 15px;
+            margin-top: 20px;
+            box-shadow: 0 0 50px 20px #d592ff;
+            text-align: left;
+        }
+
+        .procedure-box {
+         text-align: left;
+         }
+
+         .additional-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px; /* Add margin to separate from the previous content */
+        }
+
+        .arrow {
+            margin: 0 10px;
+            font-size: 20px;
+            color: #7100b8;
+            cursor: pointer;
+        }
+
+
+        .additional-buttons button {
+            background-color: #7100b8;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            margin: 0 92px;
+            cursor: pointer;
+            bottom: 40px;
+        }
+
+        .additional-buttons button {
+            transform: translateY(8px);
+            transition: transform 0.3s ease-in-out; /* Added transition property */
+        }
+
+
+        .additional-buttons button:hover {
+            transform: translateY(0);
+        }
+
+    .outlined-box {
+    border: 5px solid #7100b8;
+    border-radius: 10px; /* Adjust the border-radius as needed */
+    padding: 15px;
+    margin-top: 20px;
+    text-align: left;
+    }
+
+    .content {
+        display: none;
+    }
+
+        .content.active {
+            display: block;
+        }
+
+        .accordion-btn {
+        background-color: #7a23af;
+        color: white;
+        padding: 10px;
+        border: none;
+        text-align: left;
+        width: 100%;
+        cursor: pointer;
+        }
+
+    .accordion-panel {
+        display: none;
+        padding: 10px;
+        border-top: 1px solid #ddd;
+    }
+
+    .image-container2 {
+        max-width: 100%;
+        height: 50%;
+        box-sizing: border-box;
+        margin-top: 20px; /* Adjust margin as needed */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .image-container2 img:hover {
+        transform: scale(1.1);
+    }
+
+        .video-container {
+            max-width: 100%; /* Make sure the image doesn't overflow its container */
+            height: 50vh; /* Maintain the aspect ratio of the image */
+            width: 50vw;
+            border-radius: 10px; /* Optional: Add border-radius for a rounded look */
+            border: 5px solid #7100b8;
+            box-shadow: 0 0 50px 20px #d592ff;
+        }
+        .video-container:hover {
+        transform: scale(1.1);
+    }
+
+    .button {
+  background-color: #d592ff;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 4vh;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  font-family: 'Almendra SC', serif;
+  border-radius: 10px;
+}
+
+.button1 {
+  background-color: #d592ff; 
+  color: #7100b8; 
+  border: 3px solid #7100b8;
+}
+
+.button1:hover {
+  background-color: #7100b8;
+  color: #d592ff;
+}
+
+.button2 {
+  background-color: #d592ff; 
+  color: #7100b8; 
+  border: 3px solid #7100b8;
+}
+
+.button2:hover {
+  background-color: #7100b8;
+  color: #d592ff;
+}
+
+        /* Add responsive styles using Bootstrap classes */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 120px;
+            }
+
+            h2 {
+                font-size: 50px;
+            }
+
+            h3 {
+                font-size: 40px;
+            }
+            
+            .image-container img {
+                height: auto; /* Adjust height for smaller screens */
+            }
+
+            .image-container1 img,
+            .image-container3 img {
+                height: auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 80px;
+            }
+
+            h2 {
+                font-size: 40px;
+            }
+
+            h3 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container" style="background-color: transparent;">
+            <a class="navbar-brand" href="#">Hogwarts</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active glowing-text"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item glowing-text"><a href="history.html" class="nav-link">Hogwarts: A History</a></li>
+                    <li class="nav-item glowing-text"><a href="syllabus.html" class="nav-link">Syllabus</a></li>
+                    <li class="nav-item glowing-text"><a href="4houses.html" class="nav-link">The Four Houses</a></li>
+                    <li class="nav-item glowing-text"><a href="extracurriculars.html" class="nav-link">Non - Academic Activities</a></li>
+                    <li class="nav-item glowing-text"><a href="contactpage.html" class="nav-link">Contacts</a></li>
+                    <li class="nav-item glowing-text"><a href="staff.html" class="nav-link">Staff</a></li>  
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+    <h1>BIOLOGY</h1>
+
+    <!-- Blurred Box Information -->
+<div class="blurred-box">
+    <!-- Move the sidenav inside the blurred box -->
+    <div id="mySidenav" class="sidenav">
+        <a href="#" onclick="showContent('IntroductionContent')" id="Introduction">Introduction</a>
+        <a href="#" onclick="showContent('blogContent')" id="blog" class="dropbtn">Biology Laboratory</a>
+        <a href="#" onclick="showContent('projectsContent')" id="projects">Conclusion</a>
+    </div>
+
+    <!-- Content for each button -->
+    <div id="IntroductionContent" class="content active">
+        <h2>Introduction</h2>
+        <p>A laboratory activity with the purpose of providing a more profound understanding of the digestive system was conducted last November 29. With the use of simple and accessible materials namely:</p>
+
+    <div class="content-container">
+        <div class="material-container">
+            <div class="material-list">
+                <h2 class="glowing-text">Materials</h2>
+                <ul class="column-list">
+               
+                    <li>Zip-lock bags</li>
+                    <li>Water</li>
+                    <li>Orange juice</li>
+                    <li>Banana</li>
+                    <li>Crackers</li>
+                    <li>Socks</li>
+                    <li>Paper and plastic cups</li>
+                    <li>Tissue papers</li>
+                    <li>Oil</li>
+                    <li>Liquid Soap</li>
+                </ul>
+            </div>
+        </div>
+         <!-- Image on the Right -->
+         <div class="image-container">
+            <img src="materials.jpg" alt="Pictures of the Materials" class="img-fluid">
+        </div>
+    </div>
+
+        <br>
+       
+        <div class="long-description" id="digestionContent">
+            <p>We were able to simulate the main mechanisms of digestion and absorption that happen in our body. With this
+                laboratory page, we aim to provide our observations and insights regarding <span id="dots">...</span><span
+                    id="more">the said activity and present the processes of digestion that were represented in the experiment.<br>
+                <br>The digestive system is one of many processes that help organisms function and live. It plays a very
+                significant role in maintaining one’s health for it breaks down ingested food and absorbs nutrients needed
+                to sustain life. Through it, organisms are able to break down food and absorb nutrients, giving them
+                energy to work, grow, and repair.<br> <br>Understanding the undertaking of the digestive system is vital,
+                for us human beings at least, because it gives us a deeper sense of appreciation towards the importance
+                of taking care of our body and it helps us realize the relevance of maintaining a healthy lifestyle.
+            </span></p>
+        </div>
+
+        <!-- Read more button -->
+        <button onclick="toggleReadMore()" id="myBtn" style="background-color: #7100b8; color: white;">Read more</button>
+    </div>
+
+    <div id="blogContent" class="content">
+        <h2 id="content">Biology Laboratory</h2>
+
+        <a href="#content">
+        <button class="button button1">Digestive System Simulation Lab</button>
+        </a>
+        <button class="button button2">Pig's Heart Dissection</button>
+
+        <div class="procedure-box">
+            <h2>Procedure:</h2>
+            <ul>
+                <li>Put the banana and soda crackers inside the zip-lock bag.</li>
+                <li>Add a bit of orange juice and water in the bag as well.</li>
+                <li>Crush and mix the contents of the bag.</li>
+                <li>Grab a paper cup, cut a hole beneath it, and use it as a flannel to transfer the contents of the zip-lock bag into a sock.</li>
+                <li>Prepare a tray underneath and squeeze the material in the sock to release the liquid.</li>
+                <li>After ensuring that all liquid has been released from the content, cut a hole at the bottom of the sock, and surround it with a plastic cup with a hole underneath as well.</li>
+            </ul>
+        </div>
+
+        <h2>~ Digestive System ~</h2>
+
+        <div class="image-container1">
+            <img src="crushing2.png" alt="crushing stage" class="img-fluid">
+            </div>
+            <div class="image-container1">
+            <img src="absorp.png" alt="absorp" class="img-fluid">
+            </div>
+            <div class="image-container1">
+            <img src="bileaction.jpg" alt="bileaction" class="img-fluid">
+            </div>
+   
+         <!-- Additional buttons with arrows -->
+         <div class="additional-buttons">
+            <button onclick="showFoodProcessingInfo()">Food Processing</button>
+            <button onclick="showAbsorptionInfo()">Absorption</button> <!-- Corrected function name -->
+            <button onclick="showBileActionInfo()">Bile Action</button> <!-- Corrected function name -->
+        </div>
+   
+        <div id="foodProcessingContent" class="content">
+            <h3>Food Processing</h3>
+       
+            <div class="accordion">
+                <button class="accordion-btn" onclick="toggleAccordion('q1')"><strong>Q1:</strong> What is being simulated by putting bananas and crackers in the zip lock?</button>
+                <div class="accordion-panel" id="q1">
+                    <p>The bananas and crackers being put in the zip lock could represent ingestion or mechanical digestion, which is the intake of food and it entering the body. At the same time it could also simulate the entering of bolus from the esophagus into the stomach.
+                    </p>
+                </div>
+       
+                <button class="accordion-btn" onclick="toggleAccordion('q2')"><strong>Q2:</strong> What is being simulated by the addition of water?</button>
+                <div class="accordion-panel" id="q2">
+                    <p>Out of the two liquids that were used, water and the orange juice, water is less acidic which leads us to believe that the water represents the inactive pepsin called pepsinogen that is released by chief cells.
+                    </p>
+                </div>
+       
+                <button class="accordion-btn" onclick="toggleAccordion('q3')"><strong>Q3:</strong> What does the zip-locked bag represent?</button>
+                <div class="accordion-panel" id="q3">
+                    <p>It represents the stomach where food is stored and digestion begins. This is the site wherein hydrogen and chlorine ions are produced in order to activate the pepsinogen released by chief cells, to make pepsin which is used to break down proteins.</p>
+                </div>
+       
+                <button class="accordion-btn" onclick="toggleAccordion('q4')"><strong>Q4:</strong> What does crushing the food simulate?</button>
+                <div class="accordion-panel" id="q4">
+                    <p>Crushing the food simulates peristalsis in the stomach.</p>
+                </div>
+       
+                <button class="accordion-btn" onclick="toggleAccordion('q5')"><strong>Q5:</strong> What is being simulated by the addition of orange juice?</button>
+                <div class="accordion-panel" id="q5">
+                    <p>Orange juice was used as a representation of hydrochloric acid, made from hydrogen and chlorine ions released by parietal cells.
+                    </p>
+                </div>
+       
+                <button class="accordion-btn" onclick="toggleAccordion('q6')"><strong>Q6:</strong> What do you think are the possible biomolecule components of the food inside?</button>
+                <div class="accordion-panel" id="q6">
+                    <p>The possible biomolecule components of the food inside the zip-lock bags are the four components that are broken down by different organs and at different stages of the digestive system. This refers to carbohydrates or glucose, proteins, nucleic acids, and lipids. After going through the process of digestion, these components would have turned into their simplest versions which are monosaccharides, amino acids, nitrogenous sugars/bases/phosphates, and fatty acids respectively.</p>
+                </div>
+            </div>
+            <br>
+            <div class="image-container2">
+            <div class="image-container1">
+                <img src="crushing.png" alt="crushing" class="img-fluid">
+                </div>
+                <div class="image-container1">
+                <img src="transfer.png" alt="transfer" class="img-fluid">
+                </div>
+                <div class="image-container1">
+                <img src="transfer2.png" alt="transfer2" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div id="absorptionContent" class="content">
+            <h2>Absorption</h2>
+       
+            <div class="accordion">
+                <button class="accordion-btn" onclick="toggleAccordion('q7')"><strong>Q7:</strong> What is being simulated by the liquid flowing out of the stocking?</button>
+                <div class="accordion-panel" id="q7">
+                    <p>The liquid flowing out of the stocking represents one way of elimination of undigested food which is peeing.</p>
+                </div>
+       
+                <button class="accordion-btn" onclick="toggleAccordion('q8')"><strong>Q8:</strong> What does the tray represent?</button>
+                <div class="accordion-panel" id="q8">
+                    <p>The tray was used to catch the content that went out of the stocking. In a real life setting, this would compare to toilets.</p>
+                </div>
+       
+                <button class="accordion-btn" onclick="toggleAccordion('q9')"><strong>Q9:</strong> What is left inside the stocking?</button>
+                <div class="accordion-panel" id="q9">
+                    <p>The material that is left inside the stocking serves as undigested food.</p>
+                </div>
+       
+                <button class="accordion-btn" onclick="toggleAccordion('q10')"><strong>Q10:</strong> What is being simulated by pushing the partially solidified content?</button>
+                <div class="accordion-panel" id="q10">
+                    <p>A sphincter regulates the movement of the food throughout the different organs included in the digestive system, this includes the movement of food from its storage in the rectum to it being eliminated through the anus. Pushing the partially solidified content is similar to the act of the sphincter opening in order to excrete the undigested food.
+                    </p>
+                </div>
+                    <div class="image-container3">
+                    <img src="absorption.png" alt="absorption" class="img-fluid">
+                    </div>
+
+                    <video class="video-container text-center" autoplay muted loop>
+                        <source src="absorptionvideo.mov">
+                    </video>
+            </div>
+        </div>
+       
+        <div id="bileActionContent" class="content">
+            <h2>Bile Action</h2>
+       
+            <div class="accordion">
+                <button class="accordion-btn" onclick="toggleAccordion('q11')"><strong>Q11:</strong> Which paper towel absorbed the largest amount of water? What could be the possible explanation?</button>
+                <div class="accordion-panel" id="q11">
+                    <p>The tissue paper with 4 folds is the one that absorbed the largest amount of water because it has a larger surface area than the others, and the folds allow enhancing the paper's ability to draw in and retain water.</p>
+                </div>
+       
+                <button class="accordion-btn" onclick="toggleAccordion('q12')"><strong>Q12:</strong> In which organ of the digestive system can you compare the paper towels? How does the structure of the organ help in its function?</button>
+                <div class="accordion-panel" id="q12">
+                    <p>The paper towels can be compared to the small intestine which is one of the most important organs that contribute to the digestive system. The reason for this is that it is responsible for the absorption of nutrients and it contains a lot of enzymes that come from the gallbladder, pancreas, and liver that help further break down carbohydrates, proteins, nucleic acids, and lipids. Its large surface area aids in the absorption of nutrients from food
+                    </p>
+                </div>
+       
+                <button class="accordion-btn" onclick="toggleAccordion('q13')"><strong>Q13:</strong> Explain the role of bile in digestion. Is it involved in chemical or mechanical digestion?</button>
+                <div class="accordion-panel" id="q13">
+                    <p>Bile is an essential and unique substance that is secreted by the liver and stored in the gallbladder. When in use, it functions as a substance that aids in the digestion of fats. In spite of the fact that that process is chemical digestion, given the fact that bile is not a digestive enzyme, and its purpose is to emulsify fat which is a form of mechanical digestion.
+                    </p>
+                </div>
+                <div class="image-container2">
+                    <div class="image-container1">
+                    <img src="bileaction.jpg" alt="bileaction" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="projectsContent" class="content">
+            <h2>Conclusion</h2>
+            <p>The objective of the activity was to simulate the processes present in the digestive system. Through a simple experiment, this objective was accomplished by the individuals involved in the experiment.</p>
+       
+            <p>The simulation was able to explain and showcase all the concepts that are present in the digestive system, from ingestion, digestion, absorption, and finally elimination. The experiment involving the zip-lock bags, banana, and crackers showed the process of ingestion, digestion, and elimination, whereas the one including the tissue papers, explained absorption.</p>
+       
+            <p>A visualization of what happens inside one’s body was provided through the said experiment. More than that, it serves as a simpler representation of the complex system that was discussed.</p>
+        </div>
+</div>
+
+    <!-- Add Bootstrap and jQuery scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
+    <script>
+       
+        function showContent(contentId) {
+        // Hide all content divs
+        var contents = document.querySelectorAll('.content');
+        contents.forEach(function (content) {
+            content.classList.remove('active');
+        });
+
+        // Show the selected content
+        var selectedContent = document.getElementById(contentId);
+        selectedContent.classList.add('active');
+    }
+
+    function toggleReadMore() {
+        var longDescription = document.getElementById("digestionContent");
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+
+        if (longDescription.style.display === "none") {
+            longDescription.style.display = "block";
+            dots.style.display = "none";
+            btnText.innerHTML = "Read less";
+        } else {
+            longDescription.style.display = "none";
+            dots.style.display = "inline";
+            btnText.innerHTML = "Read more";
+        }
+    }
+   
+        function showFoodProcessingInfo() {
+            // Display the information related to food processing
+            var foodProcessingContent = document.getElementById("foodProcessingContent");
+            foodProcessingContent.classList.add('active');
+   
+            // Hide content related to absorption and bile action
+            var absorptionContent = document.getElementById("absorptionContent");
+            var bileActionContent = document.getElementById("bileActionContent");
+            absorptionContent.classList.remove('active');
+            bileActionContent.classList.remove('active');
+        }
+   
+        function showAbsorptionInfo() {
+    // Display the information related to absorption
+    var absorptionContent = document.getElementById("absorptionContent");
+    absorptionContent.classList.add('active');
+   
+    // Hide content related to food processing and bile action
+    var foodProcessingContent = document.getElementById("foodProcessingContent");
+    var bileActionContent = document.getElementById("bileActionContent");
+    foodProcessingContent.classList.remove('active');
+    bileActionContent.classList.remove('active');
+}
+
+function showBileActionInfo() {
+        // Display the information related to bile action
+        var bileActionContent = document.getElementById("bileActionContent");
+        bileActionContent.classList.add('active');
+
+        // Hide content related to food processing and absorption
+        var foodProcessingContent = document.getElementById("foodProcessingContent");
+        var absorptionContent = document.getElementById("absorptionContent");
+        foodProcessingContent.classList.remove('active');
+        absorptionContent.classList.remove('active');
+    }
+
+    function toggleAccordion(panelId) {
+        var panel = document.getElementById(panelId);
+
+        // Toggle visibility of the accordion panel
+        if (panel.style.display === 'block') {
+            panel.style.display = 'none';
+        } else {
+            panel.style.display = 'block';
+        }
+       
+    }
+
+    </script>
+</body>
+</html>
+

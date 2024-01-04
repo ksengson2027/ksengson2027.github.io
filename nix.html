@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+
+
+
+
+    <!-- Add Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url(sonnetsbg.jpg);
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        /* Adjusted styling for images */
+        .img-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .img-thumbnail {
+            width: 30%;
+        }
+
+        /* Glowing Text */
+        .glowing-text {
+            text-shadow: 0 0 10px rgb(255, 255, 255);
+            transition: text-shadow 0.5s ease-in-out;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgb(255, 255, 255);
+        }
+
+        /* Magical Transition */
+        .navbar {
+            background-color: transparent !important;
+            border: none;
+            transition: background-color 0.5s ease-in-out;
+            backdrop-filter: blur(10px);
+            font-family: 'Almendra', serif;
+        }
+
+        .navbar:hover {
+            background-color: transparent;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: transparent;
+            transition: color 0.5s ease-in-out;
+        }
+
+        .navbar:hover .navbar-brand,
+        .navbar:hover .nav-link {
+            color: #ffcc00;
+        }
+
+        img {
+            height: auto;
+            max-width: 100%;
+            align-self: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: aliceblue;
+            font-size: 65px;
+            font-family: 'Almendra SC', serif;
+            padding-top: 10px;
+        }
+
+        h3 {
+            text-align: center;
+            color: white;
+            font-family: 'Almendra SC', serif;
+            font-size: 15px;
+        }
+
+        p {
+            text-align: center;
+            color: white;
+            padding-top: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-family: 'Almendra', serif;
+            font-size: 20px;
+        }
+
+        .zoom {
+            width: 80%; /* Adjusted the width for responsiveness */
+            margin: 5px auto; /* Centered the element */
+            font-family: 'Almendra', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- Add Bootstrap navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container" style="background-color: transparent;">
+            <a class="navbar-brand" href="#">Hogwarts</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active glowing-text"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item glowing-text"><a href="history.html" class="nav-link">Hogwarts: A History</a></li>
+                    <li class="nav-item glowing-text"><a href="syllabus.html" class="nav-link">Syllabus</a></li>
+                    <li class="nav-item glowing-text"><a href="4houses.html" class="nav-link">The Four Houses</a></li>
+                    <li class="nav-item glowing-text"><a href="extracurriculars.html" class="nav-link">Non - Academic Activities</a></li>
+                    <li class="nav-item glowing-text"><a href="contactpage.html" class="nav-link">Contacts</a></li>
+                    <li class="nav-item glowing-text"><a href="staff.html" class="nav-link">Staff</a></li>  
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+    <br>
+
+    <div class="container">
+        <section class="row">
+            <div class="col-md-6">
+                <div class="petrarchan">
+                    <div class="zoom">
+                        <h1 class="glowing-text">Selfish - Madison Beer</h1>
+                        <h3>(original)</h3>
+                        <br>
+                        <p>
+            Boy, you're such a lost cause<br>
+            Now your name is crossed off<br>
+            How you gonna fix this?<br>
+            You can't even fix yourself<br>
+            <br>
+            <br>
+            It was almost two years<br>
+            That I chose to spend here<br>
+            All alone on New Year's<br>
+            Thinkin' "What the hell?"<br>
+            <br>
+            <br>
+            I don't wanna break your thread and needle<br>
+            Tryna stitch you, but I can't, I refuse<br>
+            <br>
+            <br>
+            Shouldn't love you, but I couldn't help it<br>
+            Had a feeling that you never felt it<br>
+            I always knew that you were too damn selfish<br>
+            Don't know why I looked the other way<br>
+            I wanted you to change, yeah<br>
+            I shouldn't love you, but I couldn't help it<br>
+            I always knew that you were too damn selfish<br>
+            <br>
+            <br>
+            I bet you thought you gave me real love<br>
+            But we spent it all in nightclubs<br>
+            All you ever wanna do is lie<br>
+            Why you always such a Gemini?<br>
+            <br>
+            <br>
+            Baby, who you tryna run from<br>
+            Me or all your problems?<br>
+            You know you will never solve 'em<br>
+            You don't even know yourself<br>
+            <br>
+            <br>
+            I don't wanna break your thread and needle<br>
+            Tryna stitch you, but I can't, I refuse<br>
+            <br>
+            <br>
+            Shouldn't love you, but I couldn't help it<br>
+            Had a feeling that you never felt it<br>
+            I always knew that you were too damn selfish<br>
+            Don't know why I looked the other way<br>
+            I wanted you to change, yeah<br>
+            I shouldn't love you, but I couldn't help it<br>
+            I always knew that you were too damn selfish<br>
+            <br>
+            <br>
+            I don't wanna break your thread and needle<br>
+            Tryna stitch you, but I can't, I refuse<br>
+            <br>
+            <br>
+            But it's not possible<br>
+            Plus I'm not responsible<br>
+            For your self-made obstacles<br>
+            Put my heart in the hospital, whoa, whoa-oh<br>
+            <br>
+            <br>
+            Shouldn't love you, but I couldn't help it<br>
+            Had a feeling that you never felt it<br>
+            I always knew that you were too damn selfish<br>
+            Don't know why I looked the other way<br>
+            I wanted you to change, yeah<br>
+            I shouldn't love you, but I couldn't help it<br>
+            I always knew that you were too damn selfish<br>
+            Oh, mm<br>            
+        </p>
+    </div>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="shakspearean">
+    <div class="zoom">
+        <h1 class="glowing-text">He’s too immature</h1>
+        <h3>(sonnet)</h3>
+        <br>
+        <p>
+            In love’s embrace, we swayed but stayed,<br>
+            With steady rhythm, our hearts persist,<br>
+            Yet doubts arise, am I being played?<br>
+            A waning sun, its light insists.<br>
+            <br>
+            <br>
+            We strive to mend our fading bond,<br>
+            Entwined in errors, steeped in despair,<br>
+            But hope ignites, not quite beyond,<br>
+            Granting a chance, for love to repair.<br>
+            <br>
+            <br>
+            In every tear that falls, a chance to heal,<br>
+            Each scar a story of strength untold,<br>
+            Let love’s true essence now be revealed,<br>
+            A tapestry of devotion, vibrant and bold.<br>
+            <br>
+            <br>
+            Perhaps this marks the dawn of a new day,<br>
+            The time to break away, find our own way.<br>
+        </p>
+    </div>
+</div>
+</div>
+</section>
+</div>
+
+<!-- Add Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

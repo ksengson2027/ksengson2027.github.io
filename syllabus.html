@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts School of Witchcraft and Wizardry</title>
+
+
+    <!-- Add Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almendra+SC&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            background-image: url('classroom.jpg');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+         /* Glowing Text */
+         .glowing-text {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            transition: text-shadow 0.5s ease-in-out;
+        }
+
+        .glowing-text:hover {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+        }
+
+        /* Magical Transition */
+        .navbar {
+            background-color: transparent !important;
+            border: none;
+            transition: background-color 0.5s ease-in-out;
+            backdrop-filter: blur(10px);
+            font-family: 'Almendra', serif;
+        }
+
+        .navbar:hover {
+            background-color: transparent;
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: transparent;
+            transition: color 0.5s ease-in-out;
+        }
+
+        .navbar:hover .navbar-brand,
+        .navbar:hover .nav-link {
+            color: #ffcc00;
+        }
+
+        /* Blurred Box */
+        .blurred-box {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            border-radius: 15px;
+            margin: auto;
+            max-width: 1100px;
+            text-align: justify;
+            color: aliceblue;
+            font-size: 30px;
+            font-family: 'Almendra', serif;
+        }
+
+                /* Glowing Text */
+                .glowing-text {
+            text-shadow: 0 0 10px rgb(224, 110, 48, 0.8);
+            transition: text-shadow 0.5s ease-in-out;
+        }
+        .glowing-text:hover {
+            text-shadow: 0 0 50px #eb8854;
+        }
+
+        h1 {
+            text-align: center;
+            color: aliceblue;
+            font-size: 150px;
+            font-family: 'Almendra SC', serif;
+            padding-top: 10px;
+            padding-bottom: 30px;
+            text-shadow: 0 0 10px #b54205, 0 0 10px #b54205;
+        }
+
+        /* Adjusted styling for images */
+        .img-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .img-thumbnail {
+            width: 30%;
+        }
+       
+        :any-link {
+            text-decoration: none;
+            color: #4C2605;
+            background-color: transparent;
+        }
+        a:hover {
+            text-decoration: none;
+            color: white;
+            background-color: transparent;
+        }
+       
+        .blurred-box h6{
+            text-align: justify;
+        }
+        p {
+            text-align: center;
+        }  
+
+        .zoom:hover {
+            transform: scale(1.1);
+        }
+        img {
+            width: 100%;
+        }
+        .responsive {
+            width:100%;
+            height: auto;
+        }
+
+
+        .zoom {
+            height: 550px;
+            width: 450px;
+            margin: 5px;
+            padding:20px;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.321);
+            backdrop-filter: blur(100px);
+            color: #4C2605;
+            font-family: 'Almendra', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.5s ease-in-out;
+        }
+
+
+        .img-fluid {
+            border-radius: 15px;
+        }
+
+
+        .sub-bg {
+            height: 55%;
+            width: 85%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+
+        .zoom:hover {
+            transform: scale(1.05);
+        }
+
+
+        .blurred-box {
+            padding-left: 100px;
+        }
+
+
+        @media screen and (max-width: 1200px) {
+      h1, p {
+        font-size: 150px;
+      }
+
+      p {
+        font-size: 35px;
+      }
+    }
+
+        @media screen and (max-width: 992px) {
+      h1, p {
+        font-size: 120px;
+      }
+
+      p {
+        font-size: 30px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      h1, p {
+        font-size: 80px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+    </style>
+</head>
+
+
+<body>
+    <!-- Add Bootstrap navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container" style="background-color: transparent;">
+            <a class="navbar-brand" href="#">Hogwarts</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active glowing-text"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item glowing-text"><a href="history.html" class="nav-link">Hogwarts: A History</a></li>
+                    <li class="nav-item glowing-text"><a href="#" class="nav-link">Syllabus</a></li>
+                    <li class="nav-item glowing-text"><a href="4houses.html" class="nav-link">The Four Houses</a></li>
+                    <li class="nav-item glowing-text"><a href="extracurriculars.html" class="nav-link">Non - Academic Activities</a></li>
+                    <li class="nav-item glowing-text"><a href="contactpage.html" class="nav-link">Contacts</a></li>
+                    <li class="nav-item glowing-text"><a href="staff.html" class="nav-link">Staff</a></li>                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1 class="glowing-text"> The Hogwarts Curriculum </h1>
+
+    <div class="blurred-box">
+        <section class="row">
+        <div class="zoom" class="col-sm-6">
+        <div class="sub-bg">
+        <img src="english.jpg" alt="english" >
+        </div>
+        <p> <a href="english.html"> English and Literature </a> </p>
+        <h6>Language is the basis of all communication and the primary instrument of thought. Thinking, learning, and language are interrelated. Language is
+            governed by rules and systems (language conventions) which are used to explore and communicate meaning. It defines culture which is essential in
+            understanding oneself (personal identity), forming interpersonal relationships (socialization), extending experiences, reflecting on thought and action, and
+            contributing to a better society. Language, therefore, is central to the peoples’ intellectual, social and emotional development and has an essential role in all key
+            learning areas</h6>
+        </div>  
+
+
+        <div class="zoom" class="col-sm-6">
+            <div class="sub-bg">
+                <img src="biology.jpg" alt="biology" class="responsive">
+            </div>
+            <p> <a href="biology.html"> Biology </a></p>
+            <h6>What is biology? Biology is a branch of science that deals with living organisms and their vital processes. Biology encompasses diverse fields, including botany, conservation, ecology, evolution, genetics, marine biology, medicine, microbiology, molecular biology, physiology, and zoology.</h6>
+        </div>
+        </section>
+
+
+        <section class="row">
+        <div class="zoom" class="col-sm-6">
+            <div class="sub-bg">
+                <img src="divination.jpg" alt="divination" class="responsive">
+            </div>
+            <p> Divination</p>
+            <h6>Open the gateway to the future with your Inner Eye! The magic of the tarot and so much more is waiting to be uncovered in Second Year Divination...</h6>
+        </div>
+
+
+        <div class="zoom" class="col-sm-6">
+            <div class="sub-bg">
+                <img src="astronomy.jpg" alt="astronomy" class="responsive">
+            </div>
+            <p> Astronomy</p>
+            <h6> Ever wonder what is beyond this Earth? Yes, the night sky may be beautiful, but knowledge of the heavens will also help you become a better witch or wizard. In Year One, you will observe the skies with a magical telescope, learn about our solar system neighbors, and discover how magic reflected off astronomical objects can affect us all on Earth. Come join us in Astronomy 101 - it’s an out of this world adventure!</h6>
+        </div>
+        </section>
+       
+        <section class="row">
+        <div class="zoom" class="col-sm-6">
+            <div class="sub-bg">
+                <img src="dada.jpg" alt="dada" class="responsive">
+            </div>
+            <p> Defense Against the Dark Arts</p>
+            <h6>Defense Against the Dark Arts Year One will serve as an introduction that will set the foundation for your magical education and properly prepare you for future work in Defense Against the Dark Arts. Here, we will explore what the Dark Arts are, some basic defensive and offensive spells, and low ranking dark creatures that will allow you to develop an understanding about how we discuss and defend against dark creatures.</h6>
+        </div>
+
+
+        <div class="zoom" class="col-sm-6">
+            <div class="sub-bg">
+            <img src="potions.jpg" alt="potions" class="responsive">
+        </div>
+            <p> Potions</p>
+            <h6>This course provides an introduction to potions and potioneering. First Years will learn safety and fundamental potions usage, terms, brewing, and basic theory. We will cover major ingredients as well as some history of potions.</h6>
+        </div>
+        </section>
+
+
+        <section class="row">
+        <div class="zoom" class="col-sm-6">
+            <div class="sub-bg">
+                <img src="transfiguration.png" alt="transfiguration" class="responsive">
+            </div>
+            <p> Transfiguration</p>
+            <h6>An introduction to the science of transfiguration. This will cover what transfiguration is, its branches and laws, and basic inanimate transformations.</h6>
+        </div>
+
+
+        <div class="zoom" class="col-sm-6">
+            <div class="sub-bg">
+                <img src="charms.png" alt="charms" class="responsive">
+            </div>
+            <p> Charms</p>
+            <h6>Charms presents an overview of the basics of spellcasting. Beginning with essential wizarding laws and touching briefly upon wandlore, we then discuss the components that are present within spells. Along the way you’ll learn of and practice the basic spells that all beginning witches and wizards should know. We’ll explore how such basic spells as the Severing Charm, the Levitation Charm and the Sunlight Charm demonstrate these fundamental aspects of spellcasting.</h6>
+        </div>
+        </section>
+
+
+        <section class="row">
+        <div class="zoom" class="col-sm-6">
+            <div class="sub-bg">
+            <img src="muggles.png" alt="muggles" class="responsive">
+            </div>
+            <p> Muggle Studies</p>
+            <h6>Welcome to Muggle Studies! In this year, we will survey introductory topics into Muggle life. This will provide a basic foundation for further study, or if you simply find yourself living among Muggles in the future.</h6>
+        </div>
+
+
+        <div class="zoom" class="col-sm-6">
+            <div class="sub-bg">
+            <img src="arithmancy.png" alt="arithmancy" class="responsive">
+            </div>
+            <p> Arithmancy</p>
+            <h6>Venturing across the world and traveling through time are two great aspirations. Why not do both? This year we will be observing Alchemy in different cultures and how it evolved over time. We will be looking at places such as Egypt, China, Europe, and more! Come join us in a hypothetical vacation away from the castle.</h6>
+        </div>
+        </section>
+
+
+        <section class="row">
+        <div class="zoom" class="col-sm-6">
+            <div class="sub-bg">
+            <img src="runes.jpg" alt="runes" class="responsive">
+            </div>
+            <p> Ancient Runes</p>
+            <h6>Have you ever come across strange markings in old, worn books and wondered what they said? Do you have a love for languages and writing? Would you like to learn some of the world’s oldest magic? The study of Ancient Runes is a course concerning itself with ancient magical scripts from around the world, their history, their linguistics, and the spells they were used to compose.</h6>
+        </div>
+
+
+        <div class="zoom" class="col-sm-6">
+            <div class="sub-bg">
+            <img src="hom.jpg" alt="hom" class="responsive">
+            </div>
+            <p> History of Magic</p>
+            <h6>History of Magic 101 is a basic introduction to the history of the wizarding world. Topics covered include the various theories on the origins of magic, the Olmec and Clovis people, ancient Egyptian priests, and more. Students will work to understand larger topics in history and connect major events to people, places, and their own lives.</h6>
+        </div>
+        </section>
+
+
+        <section class="row">
+        <div class="zoom" class="col-sm-6">
+            <div class="sub-bg">
+            <img src="herbology.jpg" alt="herbology" class="responsive">
+            </div>
+            <p> Herbology</p>
+            <h6>In the First Year of Herbology, you will be introduced to the basics of the discipline, including the kinds of plants, how to classify them, the difference between a magical and non-magical plant, and how to care for both kinds of flora. Additionally, First Year Herbology students will learn about a selection of easy-to-care-for plants.</h6>
+        </div>
+
+
+        <div class="zoom" class="col-sm-6">
+            <div class="sub-bg">
+            <img src="comc.jpg" alt="comc" class="responsive">
+            </div>
+            <p> Care of Magical Creatures</p>
+            <h6>Care of Magical Creatures is the course for any beast lover. During your first year in the course, we will discuss the Ministry of Magic, the Department for the Regulation and Control of Magical Creatures, and of course, the creatures of our magical world.</h6>
+        </div>
+        </section>
+
+
+    </div>
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
